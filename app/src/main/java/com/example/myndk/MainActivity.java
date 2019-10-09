@@ -12,13 +12,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     //加密 解密
+    //拆分 合并
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
     }
 
     Crypter crypter;
-    TextView tv ;
+    TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(MainActivity.this, "加密", Toast.LENGTH_LONG).show();
-                Log.d("zpj",  Environment.getExternalStorageDirectory().getPath());
-                tv.setText( crypter.encrypt("/storage/emulated/0/DCIM/Camera/IMG_20191008_100344.jpg", "/storage/emulated/0/DCIM/Camera/IMG_20191008_100345.jpg"));
+                Log.d("zpj", Environment.getExternalStorageDirectory().getPath());
+                tv.setText(crypter.encrypt("/storage/emulated/0/DCIM/Camera/IMG_20190910_211510.jpg", "/storage/emulated/0/DCIM/Camera/IMG_20191008_100345.jpg"));
             }
         });
         Button btn2 = findViewById(R.id.btn2);
@@ -52,4 +54,12 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+    public void diff(View view) {
+        FileUtils.split("/storage/emulated/0/DCIM/Camera/VID_20190910_225014.mp4", 1000000);
+    }
+
+    public void merge(View view) {
+        FileUtils.merge("/storage/emulated/0/DCIM/Camera/VID_20190910_225014.mp4");
+    }
 }
