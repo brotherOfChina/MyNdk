@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv1"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
     <TextView
         android:id="@+id/sample_text"
         android:layout_width="wrap_content"
@@ -28,16 +36,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="解密" />
+
     <Button
         android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="diff"
         android:text="分解" />
+
     <Button
         android:id="@+id/btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="merge"
         android:text="合并" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv2"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
