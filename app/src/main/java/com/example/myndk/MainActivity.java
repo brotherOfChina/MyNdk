@@ -76,7 +76,12 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromJNI();
 
     public void diff(View view) {
-        FileUtils.split("/storage/emulated/0/DCIM/Camera/VID_20191009_005624.mp4", 100000);
+        try {
+            FileUtils.split("/storage/emulated/0/DCIM/Camera/IMG_20191008_100344.jpg", 10000);
+
+        }catch (Throwable t){
+            t.printStackTrace();
+        }
     }
 
     public void merge(View view) {
