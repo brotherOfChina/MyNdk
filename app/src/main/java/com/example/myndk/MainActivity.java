@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.usage.ExternalStorageStats;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -77,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void diff(View view) {
         try {
-            FileUtils.split("/storage/emulated/0/DCIM/Camera/IMG_20191008_100344.jpg", 10000);
+
+            FileUtils.split("/storage/emulated/0/DCIM/Camera/IMG_20190910_203618.jpg", 50000);
 
         }catch (Throwable t){
             t.printStackTrace();
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void merge(View view) {
-        FileUtils.merge("/storage/emulated/0/DCIM/Camera/VID_20191009_005624.mp4");
+        FileUtils.merge("/storage/emulated/0/DCIM/Camera/IMG_20190910_203618.jpg");
     }
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void initView() {
